@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@300;400;500;600;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -155,4 +157,55 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ============================================================
+   FOREVER — Brand layer
+   ============================================================ */
+:root {
+  --brand-black: #0F0F0F;
+  --brand-charcoal: #1A1A1A;
+  --brand-dark: #2A2A2A;
+  --brand-off-white: #E0E0E0;
+  --brand-muted: #9A9A9A;
+  --brand-burgundy: #7B1E28;
+  --brand-gold: #C6A87C;
+  --brand-gold-soft: #d4b896;
+  --brand-gold-muted: rgba(198, 168, 124, 0.3);
+
+  --font-display: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  --font-body: 'Heebo', system-ui, sans-serif;
+
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.brand-mode {
+  margin: 0;
+  background: var(--brand-black);
+  color: var(--brand-off-white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--brand-gold);
+  color: var(--brand-black);
 }
