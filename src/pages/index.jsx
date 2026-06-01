@@ -6,6 +6,8 @@ import Services from './Services.jsx';
 import Portfolio from './Portfolio.jsx';
 import Process from './Process.jsx';
 import Contact from './Contact.jsx';
+import Articles from './Articles.jsx';
+import ArticleDetail from './ArticleDetail.jsx';
 
 function PagesContent() {
   return (
@@ -18,6 +20,8 @@ function PagesContent() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/process" element={<Process />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/articles/:slug" element={<ArticleDetail />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Layout>

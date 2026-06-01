@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MessageCircle, MapPin, Instagram, ArrowLeft } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, ArrowLeft } from 'lucide-react';
 import PageHero from '@/components/site/PageHero';
+import WhatsappIcon from '@/components/site/WhatsappIcon';
 
 const HERO_IMG = 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/aec010f54_freepik__cinematic-night-shot-of-a-romantic-proposal-setup-__50615.png';
 
@@ -358,7 +359,7 @@ export default function Contact() {
 
               <div className="info-list">
                 <a href="https://wa.me/972525970972" target="_blank" rel="noopener noreferrer" className="info-row">
-                  <MessageCircle size={20} />
+                  <WhatsappIcon size={20} />
                   <div>
                     <span className="label">וואטסאפ</span>
                     <span>שיחה בכל זמן</span>

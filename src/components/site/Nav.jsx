@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: '/services', label: 'הפקות' },
   { to: '/portfolio', label: 'תיק עבודות' },
   { to: '/process', label: 'התהליך' },
+  { to: '/articles', label: 'מאמרים' },
   { to: '/contact', label: 'צור קשר' },
 ];
 

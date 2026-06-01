@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MessageCircle } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import WhatsappIcon from './WhatsappIcon';
 
 export default function CtaBlock({
   eyebrow = 'הצעד הבא',
@@ -122,7 +123,7 @@ export default function CtaBlock({
                 rel="noopener noreferrer"
                 className="btn-ghost"
               >
-                <MessageCircle size={16} />
+                <WhatsappIcon size={16} />
                 <span>שיחה בוואטסאפ</span>
               </a>
             )}

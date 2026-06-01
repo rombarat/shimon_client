@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle, Mail, Phone } from 'lucide-react';
+import { Instagram, Mail, Phone } from 'lucide-react';
+import WhatsappIcon from './WhatsappIcon';
 
 const FOOTER_NAV = [
   { to: '/', label: 'בית' },
@@ -8,6 +9,7 @@ const FOOTER_NAV = [
   { to: '/services', label: 'הפקות' },
   { to: '/portfolio', label: 'תיק עבודות' },
   { to: '/process', label: 'התהליך' },
+  { to: '/articles', label: 'מאמרים' },
   { to: '/contact', label: 'צור קשר' },
 ];
 
@@ -159,7 +161,7 @@ export default function Footer() {
                 className="social-button"
                 aria-label="וואטסאפ"
               >
-                <MessageCircle size={18} />
+                <WhatsappIcon size={18} />
               </a>
               <a
                 href="mailto:hello@forever.co.il"
@@ -198,7 +200,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="footer-contact-row"
             >
-              <MessageCircle size={16} />
+              <WhatsappIcon size={16} />
               שיחה בוואטסאפ
             </a>
           </div>

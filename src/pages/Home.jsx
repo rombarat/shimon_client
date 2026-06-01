@@ -96,7 +96,6 @@ export default function Home() {
     );
     gsap.fromTo('.hero-subtitle', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, delay: 1.3, ease: 'power3.out' });
     gsap.fromTo('.hero-cta-wrap', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, delay: 1.6, ease: 'power3.out' });
-    gsap.fromTo('.scroll-indicator', { opacity: 0 }, { opacity: 1, duration: 1, delay: 2 });
 
     gsap.to('.hero-image', {
       scale: 1.2,
@@ -726,10 +725,6 @@ export default function Home() {
               <ArrowLeft size={16} />
             </Link>
           </div>
-        </div>
-        <div className="scroll-indicator">
-          <div className="scroll-line" />
-          <span className="scroll-text">Scroll</span>
         </div>
       </section>
 
