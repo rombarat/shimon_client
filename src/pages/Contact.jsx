@@ -3,9 +3,9 @@ import { Phone, Mail, MapPin, Instagram, ArrowLeft } from 'lucide-react';
 import PageHero from '@/components/site/PageHero';
 import WhatsappIcon from '@/components/site/WhatsappIcon';
 
-const HERO_IMG = 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/aec010f54_freepik__cinematic-night-shot-of-a-romantic-proposal-setup-__50615.png';
+const HERO_IMG = '/portfolio/lev-shalom/04.jpg';
 
-const BUDGETS = ['עד ₪15,000', '₪15,000—30,000', '₪30,000—60,000', '₪60,000+'];
+const SCOPES = ['הפקה אינטימית', 'הפקת חתימה מלאה', 'הפקה רב־לוקיישנית', 'עדיין לא בטוחים'];
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,7 +15,7 @@ export default function Contact() {
     email: '',
     date: '',
     location: '',
-    budget: BUDGETS[1],
+    scope: SCOPES[1],
     story: '',
   });
 
@@ -25,7 +25,7 @@ export default function Contact() {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
-    setForm({ name: '', phone: '', email: '', date: '', location: '', budget: BUDGETS[1], story: '' });
+    setForm({ name: '', phone: '', email: '', date: '', location: '', scope: SCOPES[1], story: '' });
   };
 
   return (
@@ -321,9 +321,9 @@ export default function Contact() {
                   />
                 </div>
                 <div className="field">
-                  <label htmlFor="budget">תקציב משוער</label>
-                  <select id="budget" value={form.budget} onChange={updateField('budget')}>
-                    {BUDGETS.map((b) => <option key={b}>{b}</option>)}
+                  <label htmlFor="scope">סוג ההפקה</label>
+                  <select id="scope" value={form.scope} onChange={updateField('scope')}>
+                    {SCOPES.map((s) => <option key={s}>{s}</option>)}
                   </select>
                 </div>
               </div>

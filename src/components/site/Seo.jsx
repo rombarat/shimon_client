@@ -2,8 +2,13 @@ import { useEffect } from 'react';
 
 const SITE_URL = 'https://forever.co.il';
 const SITE_NAME = 'FOREVER';
-const DEFAULT_IMAGE =
-  'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/0d1b90055_freepik__a-wideangle-landscape-shot-of-a-secluded-luxurious__50611.png';
+const DEFAULT_IMAGE = '/portfolio/wall/01.jpg';
+
+// OG/Twitter/JSON-LD require absolute URLs. Prefix the site origin for local paths.
+function absUrl(src) {
+  if (!src) return src;
+  return src.startsWith('http') ? src : `${SITE_URL}${src}`;
+}
 
 function setMeta(attr, key, value) {
   if (!value) return;
@@ -62,6 +67,7 @@ export default function Seo({
   useEffect(() => {
     const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — הפקות הצעות נישואין יוקרתיות`;
     const fullUrl = `${SITE_URL}${url || ''}`;
+    const fullImage = absUrl(image);
     document.title = fullTitle;
 
     setMeta('name', 'description', description);
@@ -69,7 +75,7 @@ export default function Seo({
 
     setMeta('property', 'og:title', fullTitle);
     setMeta('property', 'og:description', description);
-    setMeta('property', 'og:image', image);
+    setMeta('property', 'og:image', fullImage);
     setMeta('property', 'og:url', fullUrl);
     setMeta('property', 'og:type', type);
     setMeta('property', 'og:site_name', SITE_NAME);
@@ -78,7 +84,7 @@ export default function Seo({
     setMeta('name', 'twitter:card', 'summary_large_image');
     setMeta('name', 'twitter:title', fullTitle);
     setMeta('name', 'twitter:description', description);
-    setMeta('name', 'twitter:image', image);
+    setMeta('name', 'twitter:image', fullImage);
 
     if (article) {
       injectJsonLd('jsonld-article', {

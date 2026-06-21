@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import CtaBlock from '@/components/site/CtaBlock';
 
-const HERO_IMAGE = 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/3a553c23d_romantic-valentine-s-day-proposal-with-bended-knee-ring.jpg';
+const HERO_IMAGE = '/portfolio/wall/01.jpg';
 
-const PHILOSOPHY_IMAGE = 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/9d64b5daa_freepik__cinematic-medium-shot-of-a-couple-in-a-tight-emoti__50610.png';
+const PHILOSOPHY_IMAGE = '/portfolio/mishkenot/01.jpg';
 
 const CONCEPT_IMAGES = {
-  night: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/c7c44c871_freepik__a-cinematic-night-shot-of-a-lavish-proposal-setup-__50612.png',
-  secluded: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/0d1b90055_freepik__a-wideangle-landscape-shot-of-a-secluded-luxurious__50611.png',
+  night: '/portfolio/wall/02.jpg',
+  secluded: '/portfolio/mishkenot/03.jpg',
 };
 
-const WINTER_IMAGES = [
-  'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/18a40d9ce_freepik__cinematic-lowangle-shot-of-a-couple-sitting-on-a-l__50613.png',
-  'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/c43361fef_freepik__a-romantic-winter-setup-outdoors-at-night-a-couple__50614.png',
-  'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/aec010f54_freepik__cinematic-night-shot-of-a-romantic-proposal-setup-__50615.png',
+const POPUP_IMAGES = [
+  '/portfolio/lev-shalom/02.jpg',
+  '/portfolio/wall/03.jpg',
+  '/portfolio/restaurant/01.jpg',
 ];
 
 export default function Home() {
@@ -52,7 +52,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!showPopup) return;
-    const i = setInterval(() => setCurrentSlide((p) => (p + 1) % WINTER_IMAGES.length), 5000);
+    const i = setInterval(() => setCurrentSlide((p) => (p + 1) % POPUP_IMAGES.length), 5000);
     if (window.gsap && popupRef.current) {
       window.gsap.fromTo(
         popupRef.current,
@@ -834,31 +834,31 @@ export default function Home() {
           <div className="popup-modal" ref={popupRef} onClick={(e) => e.stopPropagation()}>
             <button className="popup-close" onClick={closePopup} aria-label="סגור">✕</button>
             <div className="popup-images">
-              {WINTER_IMAGES.map((img, i) => (
+              {POPUP_IMAGES.map((img, i) => (
                 <div key={i} className={`popup-slide ${i === currentSlide ? 'active' : ''}`}>
-                  <img src={img} alt={`חורף ${i + 1}`} />
+                  <img src={img} alt={`הפקת FOREVER ${i + 1}`} />
                   <div className="popup-slide-overlay" />
                 </div>
               ))}
               <div className="slide-indicators">
-                {WINTER_IMAGES.map((_, i) => (
+                {POPUP_IMAGES.map((_, i) => (
                   <div key={i} className={`slide-dot ${i === currentSlide ? 'active' : ''}`} />
                 ))}
               </div>
             </div>
             <div className="popup-content">
-              <div className="popup-badge">מבצע חורף</div>
-              <h3 className="popup-headline">החורף הזה<br />יהיה <span>לוהט.</span></h3>
+              <div className="popup-badge">שיחת היכרות</div>
+              <h3 className="popup-headline">הרגע שלכם<br />מתחיל ב<span>שיחה.</span></h3>
               <p className="popup-subheadline">
-                הטבה בלעדית להצעות בחודשי דצמבר—ינואר.
-                השאירו פרטים לקבלת החבילה המיוחדת.
+                השאירו פרטים ונחזור אליכם לשיחת ייעוץ דיסקרטית,
+                ללא התחייבות — נשמע את החזון ונבנה אותו יחד.
               </p>
               <form className="popup-form" onSubmit={handlePopupSubmit}>
                 <input type="text" className="popup-input" placeholder="השם שלך" required />
                 <input type="tel" className="popup-input" placeholder="מספר טלפון" required />
-                <button type="submit" className="popup-submit">שריינו לי תאריך</button>
+                <button type="submit" className="popup-submit">דברו איתי</button>
               </form>
-              <p className="popup-disclaimer">* בכפוף לזמינות. דיסקרטיות מובטחת.</p>
+              <p className="popup-disclaimer">* נחזור אליכם תוך 24 שעות. דיסקרטיות מובטחת.</p>
             </div>
           </div>
         </div>

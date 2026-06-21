@@ -2,7 +2,7 @@ import React from 'react';
 import PageHero from '@/components/site/PageHero';
 import CtaBlock from '@/components/site/CtaBlock';
 
-const HERO_IMG = 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6928c880d53d24dac96c5458/9d64b5daa_freepik__cinematic-medium-shot-of-a-couple-in-a-tight-emoti__50610.png';
+const HERO_IMG = '/portfolio/restaurant/02.jpg';
 
 const STEPS = [
   {
